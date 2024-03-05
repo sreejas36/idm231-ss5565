@@ -19,7 +19,7 @@ html{
 
 
 body {
-    margin-top: 30px; 
+    margin-top: 0; 
     padding: 0;
     display: flex;
     flex-wrap: wrap;
@@ -63,7 +63,9 @@ button{
 }
 .message{
     text-align: center;
+    justify-content: center;
     font-family: var(--header-font);
+    align-items: center;
 }
 .calendar{
     text-align: center;
