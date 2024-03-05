@@ -7,12 +7,15 @@
 
 @font-face {
     font-family: 'montserrat';
-    src: url('../fonts/Montserrat-VariableFont_wght.ttf'), format('truetype'), 
-    url('../fonts/montserrat-variablefont_wght-webfont.woff2'), format('woff2');
+    src: url('fonts/Montserrat-VariableFont_wght.ttf'), format('truetype');
     font-weight: 100 900;
     font-style: normal;
 }
 
+html{
+    --body-font: 'montserrat', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    --header-font: 'metamorphous', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 
 body {
     margin: 0; 
@@ -22,7 +25,10 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-image: url('images/paper.png');
+    background-color:#FE5E02;
 }
+
 
 button{
     border: none;
