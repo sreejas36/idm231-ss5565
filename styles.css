@@ -50,12 +50,15 @@ button{
 }
 
 .top_row{
+    display: flex;
+    flex: 1;
     align-items: center;
     justify-content: center;
 }
 
 .left_side{
-    
+    display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 .message{
@@ -67,6 +70,8 @@ button{
     font-family: var(--header-font);
 }
 .right_side{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 .bottom_row{
