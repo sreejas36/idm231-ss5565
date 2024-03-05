@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'metamorphous';
+    src: url('/fonts/Metamorphous-Regular.ttf'), format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('../fonts/Montserrat-VariableFont_wght.ttf'), format('truetype'), 
+    url('../fonts/montserrat-variablefont_wght-webfont.woff2'), format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+
+body {
+    margin: 0; 
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+button{
+    border: none;
+    background-color: white;
+}
+
+
+
