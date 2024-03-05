@@ -17,8 +17,9 @@ html{
     --header-font: 'metamorphous', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+
 body {
-    margin: 0; 
+    margin-top: 30px; 
     padding: 0;
     display: flex;
     flex-wrap: wrap;
@@ -27,7 +28,10 @@ body {
     height: 100vh;
     background-image: url('images/paper.png');
     background-color:#FE5E02;
+    height: 100vh;
+
 }
+
 
 
 button{
@@ -36,4 +40,36 @@ button{
 }
 
 
+.cabins {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: 4, 1fr;
+}
 
+.top_row{
+    align-items: center;
+    justify-content: center;
+}
+
+.left_side{
+    
+    justify-content: center;
+}
+.message{
+    text-align: center;
+    font-family: var(--header-font);
+}
+.calendar{
+    text-align: center;
+    font-family: var(--header-font);
+}
+.right_side{
+    justify-content: center;
+}
+.bottom_row{
+    align-items: center;
+    justify-content: center;
+}
