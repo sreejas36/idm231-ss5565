@@ -34,9 +34,16 @@ body {
 
 
 
-button{
+.olympians {
     border: none;
     background-color: white;
+}
+
+#calendar{
+    border: #FE5E02;
+    background-color: #FE5E02;
+    padding: 7%;
+    border-radius: 30px;
 }
 
 

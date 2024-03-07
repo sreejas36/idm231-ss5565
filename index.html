@@ -12,35 +12,36 @@
         
     </main>
         <div class="left_side">
-            <button id="ares">
+
+            <button class="olympians" id="ares" onclick="">
                 <img src="images/ares_cabin.png" alt="ares cabin" width="200" height="130">
             </button>
-            <button id="apollo">
+            <button class="olympians" id="apollo" >
                 <img src="images/apollo_cabin.png" alt="apollo cabin" width="200" height="130">
             </button>
         </div>
         <div class="top_row">
-            <button id="poseidon">
+            <button class="olympians" id="poseidon">
                 <img src="images/poseidon_cabin.png" alt="poseidon cabin" width="200" height="120">
             </button>
-            <button id="zeus">
+            <button class="olympians" id="zeus">
                 <img src="images/zeus_cabin.png" alt="zeus cabin" width="200" height="120">
             </button>
-            <button id="hera">
+            <button class="olympians" id="hera">
                 <img src="images/hera_cabin.png" alt="hera cabin" width="200" height="120">
             </button>
-            <button id="demeter">
+            <button class="olympians" id="demeter">
                 <img src="images/demeter_cabin.png" alt="demeter cabin" width="200" height="150">
             </button>
-            <button class="help">
+            <button class="olympians" class="help">
                 <img src="images/help_icon.png" alt="help">
             </button>
         </div>
         <div class="right_side">
-            <button id="athena">
+            <button class="olympians" id="athena">
                 <img src="images/athena_cabin.png" alt="athena cabin" width="200" height="130">
             </button>
-            <button id="artemis">
+            <button class="olympians" id="artemis">
                 <img src="images/artemis_cabin.png" alt="artemis cabin" width="200" height="130">
             </button> 
         </div>
@@ -48,28 +49,34 @@
             <h1>What's Your Camp Half-Blood Cabin?</h1>
             <h3>Hello, Demigod.</h3>
             <p>Enter Your Birthday</p>
-
+        </div>
         <div class="calendar">
-
+            <input type="date" id="birthday">
+            <button id="calendar" onclick="calculateZodiac()">Let's Go</button>
+            <div id="result"></div>
+            
         </div>
 
         <div class="bottom_row">
-            <button id="hephaestus">
+            <button class="olympians" id="hephaestus">
                 <img src="images/hephaestus_cabin.png" alt="hephaestus cabin" width="200" height="130">
             </button>
-            <button id="aphrodite">
+            <button class="olympians" id="aphrodite">
                 <img src="images/aphrodite_cabin.png" alt="aphrodite cabin" width="200" height="130">
             </button>
-            <button id="hestia">
+            <button class="olympians" id="hestia">
                 <img src="images/hestia_hearth.png" alt="hestia's hearth" width="200" height="200">
             </button> 
-            <button id="hermes">
+            <button class="olympians" id="hermes">
                 <img src="images/hermes_cabin.png" alt="hermes cabin" width="200" height="150">
             </button>
-            <button id="dionysus">
+            <button class="olympians" id="dionysus">
                 <img src="images/dionysus_cabin.png" alt="dionysus cabin" width="200" height="130">
             </button> 
         </div>
+
+
+        
     <!--
         <div class="cabins">
                 <button id="zeus">
