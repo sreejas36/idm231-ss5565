@@ -1,4 +1,85 @@
-//listing olympians
+// store info about olympians and their signs
+function zodiac (){}
+
+
+
+const olympians = [
+
+    {
+        name: 'Zeus',
+        sign: 'Taurus',
+        description: ''
+        campers:'Jason Grace', 'Thalia Grace',
+    }
+    {
+        name: 'Hera',
+        sign: 'Capricorn',
+        description:''
+    }
+    {
+        name: 'Poseidon'
+        sign: 'Pisces'
+        description:
+        campers:'Percy Jackson'
+    }
+    {
+        name: 'Demeter'
+        sign: 'Virgo'
+        description:
+        campers: 'Meg McCaffrey',
+    }
+    {
+        name: 'Ares',
+        sign: 'Aries,
+        description: 'heyyyy',
+        campers: 'Clarisse LaRue','Frank Zhang' 'images/aries.png',
+    }
+    {
+        name:
+        sign:
+        description:
+        campers:
+    }
+
+];
+
+let currentSign = null;
+
+
+function displayZodiacSign(name) {
+    const zodiacContainer = document.getElementById('zodiacContainer');
+    zodiacContainer.innerHTML = ''; // Clear existing content
+
+    const sign = zodiacSigns[name];
+
+    if (sign) {
+        const zodiacCard = document.createElement('div');
+        zodiacCard.classList.add('zodiac-card');
+
+        const image = document.createElement('img');
+        image.src = sign.image;
+        image.alt = sign.sign;
+        image.classList.add('zodiac-image');
+
+        const displayName = document.createElement('h3');
+        displayName.textContent = sign.name;
+
+        const description = document.createElement('p');
+        description.textContent = sign.description;
+
+        zodiacCard.appendChild(image);
+        zodiacCard.appendChild(displayName);
+        zodiacCard.appendChild(description);
+
+        zodiacContainer.appendChild(zodiacCard);
+    }
+}
+
+
+
+
+
+//linking date code to the olympian
 const olympian = {};
 
 if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
@@ -29,3 +110,6 @@ if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
 
 
 console.log (olympian);
+
+
+
