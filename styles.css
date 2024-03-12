@@ -46,6 +46,7 @@ body {
     margin: 0.5rem;
     border-radius: 30px;
     background-color: #FE5E02;
+    font-family: var(--montserrat);
 }
 
 #calendar{
@@ -119,4 +120,10 @@ body {
 }
 #help-section {
     font-family: var(--metamorphous);
+}
+
+.zodiac-container{
+    font-family: var(--metamorphous);
+    text-align: center;
+    align-items: center;
 }

@@ -24,16 +24,16 @@ const olympianInfo = {
         campers:'Meg McCaffrey',
     },
     ares: {
-    name: 'Ares',
-    sign: 'Aries',
-    description: 'God of War',
-    campers: 'Clarisse LaRue, Frank Zhang',
+        name: 'Ares',
+        sign: 'Aries',
+        description: 'God of War',
+        campers: 'Clarisse LaRue, Frank Zhang',
     },
     athena: {
-    name: 'Athena',
-    sign: 'Aquarius',
-    description: 'Goddess of Wisdom',
-    campers: 'Annabeth Chase',
+        name: 'Athena',
+        sign: 'Aquarius',
+        description: 'Goddess of Wisdom',
+        campers: 'Annabeth Chase',
     },
     apollo: {
         name: 'Apollo',
@@ -71,30 +71,32 @@ const olympianInfo = {
         description: 'Goddess of Love',
     },
 };
+
 function calculateOlympian() {
     let selectedDate = document.getElementById("birthday").value;
     if (selectedDate) {
         const birthdate = new Date(selectedDate);
-        const month = birthdate.getMonth() + 1; 
+        const month = birthdate.getMonth() + 1;
         const day = birthdate.getDate();
 
         const olympian = getOlympian(month, day);
         displayOlympianInfo(olympian);
     } else {
-        // if there's no birthday and the user presses lets go, they get a response
         document.getElementById("result").innerHTML = "Please put in your birthday!";
     }
 }
 
-    function displayOlympianInfo(god) {
+function displayOlympianInfo(god) {
+        console.log(god);
         // Display the information for the selected Greek god
         const godInfo = olympianInfo[god];
         document.getElementById("result").innerHTML = `
-            Olympian: ${godInfo.name}<br>
-            Sign: ${godInfo.sign} <br>
-            Description: ${godInfo.description} <br>
+            ${godInfo.name}<br>
+            ${godInfo.sign} <br>
+            ${godInfo.description} <br>
             Campers: ${godInfo.campers || 'None'}
         `;
+        
 }
 
 //function to find olympian
