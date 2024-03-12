@@ -17,13 +17,79 @@ const olympianInfo = {
         sign: 'Pisces',
         description:'God of the sea',
         campers:'Percy Jackson',
-    }
-
+    },
+    demeter: {
+        name: 'Demeter',
+        sign: 'Virgo',
+        description:'Goddess of the Harvest',
+        campers:'Meg McCaffrey',
+    },
+    ares: {
+    name: 'Ares',
+    sign: 'Aries',
+    description: 'God of War',
+    campers: 'Clarisse LaRue, Frank Zhang',
+    },
+    athena: {
+    name: 'Athena',
+    sign: 'Aquarius',
+    description: 'Goddess of Wisdom',
+    campers: 'Annabeth Chase',
+    },
+    apollo: {
+        name: 'Apollo',
+        sign: 'Leo',
+        description: 'God of the Sun',
+        campers: 'Will Solace, Kayla Knowles, Austin Lake',
+    },
+    artemis:{
+        name: 'Artemis',
+        sign: 'Cancer',
+        description: 'Goddess of the Moon',
+        campers: 'Thalia Grace',
+    },
+    hephaestus: {
+        name: 'Hephaestus',
+        sign: 'Scorpio',
+        description: 'God of the Sun',
+        campers: 'Leo Valdez, Charles Beckendorf,',
+    },
+    aphrodite: {
+        name: 'Aphrodite',
+        sign: 'Libra',
+        description: 'Goddess of Love',
+        campers: 'Piper McLean, Silena Beauregard',
+    },
+    hermes: {
+        name: 'Hermes',
+        sign: 'Gemini',
+        description: 'God of Travel',
+        campers: 'Luke Castellan, Travis and Connor Stoll',
+    },
+    dionysus: {
+        name: 'Dionysus',
+        sign: 'Sagittarius',
+        description: 'Goddess of Love',
+    },
 };
 // event listeners to see if someone clicks a cabin and call respective info
 document.getElementById("zeus").addEventListener("click", () => displayOlympianInfo('zeus'));
 document.getElementById("hera").addEventListener("click", () => displayOlympianInfo('hera'));
+document.getElementById("poseidon").addEventListener("click", () => displayOlympianInfo('poseidon'));
+document.getElementById("demeter").addEventListener("click", () => displayOlympianInfo('demeter'));
+document.getElementById("ares").addEventListener("click", () => displayOlympianInfo('ares'));
+document.getElementById("athena").addEventListener("click", () => displayOlympianInfo('athena'));
+document.getElementById("apollo").addEventListener("click", () => displayOlympianInfo('apollo'));
+document.getElementById("artemis").addEventListener("click", () => displayOlympianInfo('artemis'));
+document.getElementById("hephaestus").addEventListener("click", () => displayOlympianInfo('hephaestus'));
+document.getElementById("aphrodite").addEventListener("click", () => displayOlympianInfo('aphrodite'));
+document.getElementById("hermes").addEventListener("click", () => displayOlympianInfo('hermes'));
+document.getElementById("dionysus").addEventListener("click", () => displayOlympianInfo('dionysus'));
 
+
+
+// event listener for the lets go button
+document.getElementById("calculate").addEventListener("click", () => calculateOlympian());
 
 function calculateOlympian() {
     let selectedDate = document.getElementById("birthday").value;
