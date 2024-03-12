@@ -41,10 +41,11 @@ body {
     background-color: transparent;
 }
 
-.calculate {
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 15px;
+#calculate {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 30px;
+    background-color: #FE5E02;
 }
 
 #calendar{
@@ -80,7 +81,9 @@ body {
     text-align: center;
     justify-content: center;
     font-family: var(--metamorphous);
-    align-items: center;
+    align-items: baseline;
+    position: fixed;
+    top: 50px;
 }
 .calendar{
     text-align: center;
@@ -92,6 +95,7 @@ body {
     justify-content: center;
 }
 .bottom_row{
+    display: flex;
     align-items: center;
     justify-content: center;
 }
