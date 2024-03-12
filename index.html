@@ -12,7 +12,6 @@
         
     </main>
         <div class="left_side">
-
             <button class="olympians" id="ares" onclick="">
                 <img src="images/ares_cabin.png" alt="ares cabin" width="200" height="130">
             </button>
@@ -20,13 +19,15 @@
                 <img src="images/apollo_cabin.png" alt="apollo cabin" width="200" height="130">
             </button>
         </div>
-        <div class="top_row">
+        <div class="top_left">
             <button class="olympians" id="poseidon">
                 <img src="images/poseidon_cabin.png" alt="poseidon cabin" width="200" height="120">
             </button>
             <button class="olympians" id="zeus">
                 <img src="images/zeus_cabin.png" alt="zeus cabin" width="200" height="120">
             </button>
+        </div>
+        <div class="top_right">
             <button class="olympians" id="hera">
                 <img src="images/hera_cabin.png" alt="hera cabin" width="200" height="120">
             </button>
@@ -53,12 +54,12 @@
         -->
         <div class="message">
             <h1>Cabins at <br>Camp Half-Blood</h1>
-            
+            <div class="calendar">
+                <input class="calendar" type="date" id="birthday">
+                <button id="calculate">Let's Go</button>
+            </div>
         </div>
-        <div class="calendar">
-            <input class="calendar" type="date" id="birthday">
-            <button id="calculate">Let's Go</button>
-        </div>
+    
         <div class="zodiac-container" 
         id="result">
 
