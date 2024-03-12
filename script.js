@@ -1,4 +1,3 @@
-
 const olympianInfo = {
     
     zeus: {
@@ -72,25 +71,6 @@ const olympianInfo = {
         description: 'Goddess of Love',
     },
 };
-// event listeners to see if someone clicks a cabin and call respective info
-document.getElementById("zeus").addEventListener("click", () => displayOlympianInfo('zeus'));
-document.getElementById("hera").addEventListener("click", () => displayOlympianInfo('hera'));
-document.getElementById("poseidon").addEventListener("click", () => displayOlympianInfo('poseidon'));
-document.getElementById("demeter").addEventListener("click", () => displayOlympianInfo('demeter'));
-document.getElementById("ares").addEventListener("click", () => displayOlympianInfo('ares'));
-document.getElementById("athena").addEventListener("click", () => displayOlympianInfo('athena'));
-document.getElementById("apollo").addEventListener("click", () => displayOlympianInfo('apollo'));
-document.getElementById("artemis").addEventListener("click", () => displayOlympianInfo('artemis'));
-document.getElementById("hephaestus").addEventListener("click", () => displayOlympianInfo('hephaestus'));
-document.getElementById("aphrodite").addEventListener("click", () => displayOlympianInfo('aphrodite'));
-document.getElementById("hermes").addEventListener("click", () => displayOlympianInfo('hermes'));
-document.getElementById("dionysus").addEventListener("click", () => displayOlympianInfo('dionysus'));
-
-
-
-// event listener for the lets go button
-document.getElementById("calculate").addEventListener("click", () => calculateOlympian());
-
 function calculateOlympian() {
     let selectedDate = document.getElementById("birthday").value;
     if (selectedDate) {
@@ -104,6 +84,7 @@ function calculateOlympian() {
         // if there's no birthday and the user presses lets go, they get a response
         document.getElementById("result").innerHTML = "Please put in your birthday!";
     }
+}
 
     function displayOlympianInfo(god) {
         // Display the information for the selected Greek god
@@ -114,8 +95,7 @@ function calculateOlympian() {
             Description: ${godInfo.description} <br>
             Campers: ${godInfo.campers || 'None'}
         `;
-    }
-
+}
 
 //function to find olympian
 function getOlympian (month, day) {
@@ -146,4 +126,24 @@ function getOlympian (month, day) {
         return 'Athena'
     }
 }
-}
+
+
+
+// event listeners to see if someone clicks a cabin and call respective info
+document.getElementById("zeus").addEventListener("click", () => displayOlympianInfo('zeus'));
+document.getElementById("hera").addEventListener("click", () => displayOlympianInfo('hera'));
+document.getElementById("poseidon").addEventListener("click", () => displayOlympianInfo('poseidon'));
+document.getElementById("demeter").addEventListener("click", () => displayOlympianInfo('demeter'));
+document.getElementById("ares").addEventListener("click", () => displayOlympianInfo('ares'));
+document.getElementById("athena").addEventListener("click", () => displayOlympianInfo('athena'));
+document.getElementById("apollo").addEventListener("click", () => displayOlympianInfo('apollo'));
+document.getElementById("artemis").addEventListener("click", () => displayOlympianInfo('artemis'));
+document.getElementById("hephaestus").addEventListener("click", () => displayOlympianInfo('hephaestus'));
+document.getElementById("aphrodite").addEventListener("click", () => displayOlympianInfo('aphrodite'));
+document.getElementById("hermes").addEventListener("click", () => displayOlympianInfo('hermes'));
+document.getElementById("dionysus").addEventListener("click", () => displayOlympianInfo('dionysus'));
+
+
+
+// event listener for the lets go button
+document.getElementById("calculate").addEventListener("click", () => calculateOlympian());
