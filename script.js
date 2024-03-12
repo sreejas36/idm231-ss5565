@@ -1,115 +1,83 @@
-// store info about olympians and their signs
-function zodiac (){}
 
-
-
-const olympians = [
-
-    {
+const olympianInfo = {
+    
+    zeus: {
         name: 'Zeus',
         sign: 'Taurus',
-        description: ''
-        campers:'Jason Grace', 'Thalia Grace',
-    }
-    {
+        description: 'King of the Gods',
+        campers:'Jason Grace, Thalia Grace', 
+    },
+    hera: {
         name: 'Hera',
         sign: 'Capricorn',
-        description:''
-    }
-    {
-        name: 'Poseidon'
-        sign: 'Pisces'
-        description:
-        campers:'Percy Jackson'
-    }
-    {
-        name: 'Demeter'
-        sign: 'Virgo'
-        description:
-        campers: 'Meg McCaffrey',
-    }
-    {
-        name: 'Ares',
-        sign: 'Aries,
-        description: 'heyyyy',
-        campers: 'Clarisse LaRue','Frank Zhang' 'images/aries.png',
-    }
-    {
-        name:
-        sign:
-        description:
-        campers:
+        description:'Queen of the Gods',
+    },
+    poseidon: {
+        name: 'Poseidon',
+        sign: 'Pisces',
+        description:'God of the sea',
+        campers:'Percy Jackson',
     }
 
-];
+};
+// event listeners to see if someone clicks a cabin and call respective info
+document.getElementById("zeus").addEventListener("click", () => displayOlympianInfo('zeus'));
+document.getElementById("hera").addEventListener("click", () => displayOlympianInfo('hera'));
 
-let currentSign = null;
+
+function calculateOlympian() {
+    let selectedDate = document.getElementById("birthday").value;
+    if (selectedDate) {
+        const birthdate = new Date(selectedDate);
+        const month = birthdate.getMonth() + 1; 
+        const day = birthdate.getDate();
+
+        const olympian = getOlympian(month, day);
+        displayOlympianInfo(olympian);
+    } else {
+        // if there's no birthday and the user presses lets go, they get a response
+        document.getElementById("result").innerHTML = "Please put in your birthday!";
+    }
+
+    function displayOlympianInfo(god) {
+        // Display the information for the selected Greek god
+        const godInfo = olympianInfo[god];
+        document.getElementById("result").innerHTML = `
+            Olympian: ${godInfo.name}<br>
+            Sign: ${godInfo.sign} <br>
+            Description: ${godInfo.description} <br>
+            Campers: ${godInfo.campers || 'None'}
+        `;
+    }
 
 
-function displayZodiacSign(name) {
-    const zodiacContainer = document.getElementById('zodiacContainer');
-    zodiacContainer.innerHTML = ''; // Clear existing content
+//function to find olympian
+function getOlympian (month, day) {
 
-    const sign = zodiacSigns[name];
-
-    if (sign) {
-        const zodiacCard = document.createElement('div');
-        zodiacCard.classList.add('zodiac-card');
-
-        const image = document.createElement('img');
-        image.src = sign.image;
-        image.alt = sign.sign;
-        image.classList.add('zodiac-image');
-
-        const displayName = document.createElement('h3');
-        displayName.textContent = sign.name;
-
-        const description = document.createElement('p');
-        description.textContent = sign.description;
-
-        zodiacCard.appendChild(image);
-        zodiacCard.appendChild(displayName);
-        zodiacCard.appendChild(description);
-
-        zodiacContainer.appendChild(zodiacCard);
+    if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
+        return 'Hera';
+    } else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {
+        return 'Dionysus';
+    } else if ((month === 10 && day >= 24) || (month === 11 && day <= 21)) {
+        return 'Hephaestus'
+    } else if ((month === 9 && day >= 23) || (month === 10 && day <= 23)) {
+        return 'Aphrodite'
+    } else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) {
+        return 'Demeter'
+    } else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) {
+        return 'Apollo'
+    } else if ((month === 6 && day >= 22) || (month === 7 && day <= 22)) {
+        return 'Artemis'
+    } else if ((month === 5 && day >= 21) || (month === 6 && day <= 21)) {
+        return 'Hermes'
+    } else if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) {
+        return 'Zeus'
+    } else if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) {
+        return 'Ares'
+    } else if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) {
+        return 'Poseidon'
+    } else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
+        return 'Athena'
     }
 }
-
-
-
-
-
-//linking date code to the olympian
-const olympian = {};
-
-if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
-    olympian = 'Hera'
-} else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {
-    olympian = 'Sagittarius'
-} else if ((month === 10 && day >= 24) || (month === 11 && day <= 21)) {
-    olympian = 'Scorpio'
-} else if ((month === 9 && day >= 23) || (month === 10 && day <= 23)) {
-    olympian = 'Libra'
-} else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) {
-    olympian = 'Virgo'
-} else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) {
-    olympian = 'Leo'
-} else if ((month === 6 && day >= 22) || (month === 7 && day <= 22)) {
-    olympian = 'Artemis'
-} else if ((month === 5 && day >= 21) || (month === 6 && day <= 21)) {
-    olympian = 'Hermes'
-} else if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) {
-    olympian = 'Taurus'
-} else if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) {
-    olympian = 'Ares'
-} else if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) {
-    olympian = 'Poseidon'
-} else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
-    olympian = 'Athena'
 }
-
-
-console.log (olympian);
-
-
-

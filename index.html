@@ -42,21 +42,25 @@
                 <img src="images/artemis_cabin.png" alt="artemis cabin" width="200" height="130">
             </button> 
         </div>
-        <button class="olympians" id="help">
+        <button id="help">
             <img src="images/help_icon.png" alt="help icon" width="50" height="50">
         </button>
+            <div id="help-section">
+                <h3>Hello, Demigod.</h3>
+                <h4>Want to figure out your godly parent?</h4>
+                <p>Enter Your Birthday</p> 
+            </div>
+
         <div class="message">
-            <h1>What's Your Camp Half-Blood Cabin?</h1>
-            <h3>Hello, Demigod.</h3>
-            <p>Enter Your Birthday</p>
+            <h1>Cabins at <br>Camp Half-Blood</h1>
+            
         </div>
         <div class="calendar">
             <input class="calendar" type="date" id="birthday">
-            <button id="calendar" onclick="calculateZodiac()">Let's Go</button>
-            <div id="result"></div>
+            <button id="calculate">Let's Go</button>
         </div>
-        <div class="zodiac-container">
-
+        <div class="zodiac-container" 
+        id="result">
         </div>
 
         <div class="bottom_row">

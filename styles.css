@@ -13,15 +13,15 @@
 }
 
 html{
-    --body-font: 'montserrat', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    --header-font: 'metamorphous', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    --montserrat: 'montserrat', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    --metamorphous: 'metamorphous', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 
 body {
     margin-top: 0  ; 
     padding: 0;
-    display: grid;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -34,14 +34,14 @@ body {
 
 
 .olympians {
-    display: grid;
+    display: flex;
     flex-direction: column;
     align-items: center;
     border: none;
     background-color: transparent;
 }
 
-.calendar {
+.calculate {
     padding: 1rem;
     margin: 1rem;
     border-radius: 15px;
@@ -56,7 +56,7 @@ body {
 
 
 .cabins {
-    display: grid;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -65,29 +65,29 @@ body {
 }
 
 .top_row{
-    display: grid;
+    display: flex;
     flex: 1;
     align-items: center;
     justify-content: center;
 }
 
 .left_side{
-    display: grid;
+    display: flex;
     flex-direction: column;
     justify-content: center;
 }
 .message{
     text-align: center;
     justify-content: center;
-    font-family: var(--header-font);
+    font-family: var(--metamorphous);
     align-items: center;
 }
 .calendar{
     text-align: center;
-    font-family: var(--header-font);
+    font-family: var(--metamorphous);
 }
 .right_side{
-    display: grid;
+    display: flex;
     flex-direction: column;
     justify-content: center;
 }
@@ -97,12 +97,22 @@ body {
 }
 
 .zodiac-container{
-    display: grid;
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    height: 300px;
+    width: 500px;
+    background-color: blanchedalmond;
+    border-radius: 30px;
+    position: fixed;
 }
 #help {
     position: fixed;
     right: 30px;
     top: 50px;
+    border: none;
+    background-color: transparent;
+}
+#help-section {
+    font-family: var(--metamorphous);
 }
