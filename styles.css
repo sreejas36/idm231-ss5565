@@ -12,7 +12,7 @@
     font-style: normal;
 }
 
-html{
+:root{
     --montserrat: 'montserrat', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     --metamorphous: 'metamorphous', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -21,7 +21,7 @@ html{
 body {
     margin-top: 0  ; 
     padding: 0;
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -31,13 +31,23 @@ body {
     height: 100vh;
 }
 
-
+main {
+    display: grid;
+    grid-template-rows: repeat(4);
+    grid-template-columns: repeat(5);
+    grid-template-areas: 
+        "a b c d e"
+        "f g g g h"
+        "i g g g j"
+        "k l m n o";
+}
 
 .olympians {
-    flex-direction: column;
+    display: grid;
     align-items: center;
     border: none;
     background-color: transparent;
+    grid-template-columns: auto;
 }
 
 #calculate {
@@ -57,7 +67,7 @@ body {
 
 
 .cabins {
-    display: flex;
+    display: g;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -70,9 +80,9 @@ body {
     flex: 1;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    left: 50px;
-    top: 70px;
+    /* position: fixed; */
+    /* left: 50px; */
+    /* top: 70px; */
     
 }
 
@@ -81,9 +91,9 @@ body {
     flex: 1;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    right: 50px;
-    top: 50px;
+    /* position: fixed; */
+    /* right: 50px; */
+    /* top: 50px; */
     
 }
 
@@ -91,48 +101,48 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: fixed;
-    left: 30px;
-    top: 250px;
+    /* position: fixed; */
+    /* left: 30px; */
+    /* top: 250px; */
 }
 .message{
     text-align: center;
     justify-content: center;
     font-family: var(--metamorphous);
     align-items: baseline;
-    position: fixed;
-    top: 50px;
+    /* position: fixed; */
+    /* top: 50px; */
 }
 .calendar{
     text-align: center;
     font-family: var(--metamorphous);
 }
 .right_side{
-    display: flex;
+    display: grid;
     flex-direction: column;
     justify-content: center;
-    position: fixed;
-    right: 30px;
-    top: 250px;
+    /* position: fixed; */
+    /* right: 30px; */
+    /* top: 250px; */
 }
 .bottom_row{
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    bottom: 50px;
+    /* position: fixed; */
+    /* bottom: 50px; */
     justify-items: auto;
 }
 
 .zodiac-container{
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
     justify-content: space-around;
     height: 250px;
     width: 600px;
     background-color: blanchedalmond;
     border-radius: 30px;
-    position: fixed;
+    /* position: fixed; */
 }
 #help {
     position: fixed;
