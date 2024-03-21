@@ -5,7 +5,7 @@ const olympianInfo = {
         sign: 'Taurus',
         description: 'King of the Gods',
         campers:['Jason Grace', 'Thalia Grace'],
-        image: ['images/jason.webp','images/thalia.webp']
+        images: ['images/jason.webp','images/thalia.webp']
     },
     hera: {
         name: 'Hera',
@@ -80,7 +80,6 @@ function calculateOlympian() {
         const birthdate = new Date(selectedDate);
         const month = birthdate.getMonth() + 1;
         const day = birthdate.getDate();
-
         const olympian = getOlympian(month, day);
         displayOlympianInfo(olympian);
     } else {
@@ -89,14 +88,17 @@ function calculateOlympian() {
 }
 
 function displayOlympianInfo(god) {
-        console.log(god);
+        console.log("Received god:", god);
         // Display the information for the selected Greek god
         const godInfo = olympianInfo[god];
+        console.log("God info:", godInfo);
+        console.log("God name:", godInfo.name);
         document.getElementById("result").innerText = `
             ${godInfo.name}\n
             ${godInfo.sign}\n
             ${godInfo.description}\n
-            Campers: ${godInfo.campers || 'None'}
+            ${godInfo.campers || 'None'}\n
+            ${godInfo.images || 'None'}
         `;
         // \n is equivalent to a break tag
 }
