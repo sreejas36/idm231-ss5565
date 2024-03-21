@@ -5,7 +5,7 @@ const olympianInfo = {
         sign: 'Taurus',
         description: 'King of the Gods',
         campers:['Jason Grace', 'Thalia Grace'],
-        images: ['images/jason.webp','images/thalia.webp']
+        images: ['images/jason.webp', 'images/thalia.webp']
     },
     hera: {
         name: 'Hera',
