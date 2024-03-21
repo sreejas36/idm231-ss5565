@@ -4,7 +4,8 @@ const olympianInfo = {
         name: 'Zeus',
         sign: 'Taurus',
         description: 'King of the Gods',
-        campers:'Jason Grace, Thalia Grace', 
+        campers:['Jason Grace', 'Thalia Grace'],
+        image: ['images/jason.webp','images/thalia.webp']
     },
     hera: {
         name: 'Hera',
@@ -14,7 +15,7 @@ const olympianInfo = {
     poseidon: {
         name: 'Poseidon',
         sign: 'Pisces',
-        description:'God of the sea',
+        description:'God of the ea',
         campers:'Percy Jackson',
     },
     demeter: {
@@ -50,7 +51,7 @@ const olympianInfo = {
     hephaestus: {
         name: 'Hephaestus',
         sign: 'Scorpio',
-        description: 'God of the Sun',
+        description: 'God of Craftsmen and Fire',
         campers: 'Leo Valdez, Charles Beckendorf,',
     },
     aphrodite: {
@@ -68,9 +69,10 @@ const olympianInfo = {
     dionysus: {
         name: 'Dionysus',
         sign: 'Sagittarius',
-        description: 'Goddess of Love',
+        description: 'God of Wine',
     },
 };
+console.log()
 
 function calculateOlympian() {
     let selectedDate = document.getElementById("birthday").value;
@@ -90,18 +92,17 @@ function displayOlympianInfo(god) {
         console.log(god);
         // Display the information for the selected Greek god
         const godInfo = olympianInfo[god];
-        document.getElementById("result").innerHTML = `
-            ${godInfo.name}<br>
-            ${godInfo.sign} <br>
-            ${godInfo.description} <br>
+        document.getElementById("result").innerText = `
+            ${godInfo.name}\n
+            ${godInfo.sign}\n
+            ${godInfo.description}\n
             Campers: ${godInfo.campers || 'None'}
         `;
-        
+        // \n is equivalent to a break tag
 }
 
 //function to find olympian
 function getOlympian (month, day) {
-
     if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
         return 'Hera';
     } else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {

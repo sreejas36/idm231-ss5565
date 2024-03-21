@@ -26,21 +26,44 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('images/paper.png');
+    background-image: url('images/paper.webp');
     background-color:#FE5E02;
     height: 100vh;
 }
 
 main {
+    margin: auto;
     display: grid;
-    grid-template-rows: repeat(4);
-    grid-template-columns: repeat(5);
+    grid-template-columns: 1fr 1fr 2fr 1fr 1fr; /* 5 columns */
+    grid-auto-rows: 150px; /* Height of each row */
+    gap: 5px; /* Gap between grid items */
+    /* grid-template-rows: repeat(4); */
+    /* grid-template-columns: repeat(5); */
     grid-template-areas: 
         "a b c d e"
-        "f g g g h"
-        "i g g g j"
+        "f - - - h"
+        "i - - - j"
         "k l m n o";
+    justify-content: center;
+    align-items: center;
 }
+
+#poseidon { grid-area: a; }
+#zeus { grid-area: b; }
+#message{ grid-area: c; }
+#hera{ grid-area: d; }
+#demeter{ grid-area: e; }
+#ares{ grid-area: f; }
+/* #result{ grid-area: g; } */
+#athena{ grid-area: h; }
+#apollo{ grid-area: i; }
+#artemis{ grid-area: j; }
+#hephaestus{ grid-area: k; }
+#hermes{ grid-area: l; }
+#hestia{ grid-area: m; }
+#dionysus{ grid-area: n; }
+#aphrodite{ grid-area: o; }
+
 
 .olympians {
     display: grid;
@@ -48,6 +71,8 @@ main {
     border: none;
     background-color: transparent;
     grid-template-columns: auto;
+    align-items: center;
+    justify-content: center;
 }
 
 #calculate {
@@ -105,7 +130,7 @@ main {
     /* left: 30px; */
     /* top: 250px; */
 }
-.message{
+#message{
     text-align: center;
     justify-content: center;
     font-family: var(--metamorphous);
@@ -134,15 +159,20 @@ main {
     justify-items: auto;
 }
 
-.zodiac-container{
-    display: grid;
+#result{
+    display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    text-align: center;
     height: 250px;
     width: 600px;
     background-color: blanchedalmond;
     border-radius: 30px;
-    /* position: fixed; */
+    position: fixed;
+    margin: auto;
+    right: auto;
+    top: auto;
+    left: auto;
 }
 #help {
     position: fixed;
@@ -159,5 +189,6 @@ main {
     font-family: var(--metamorphous);
     text-align: center;
     align-items: center;
+    text-size-adjust: 20;
     padding: 10px;
 }

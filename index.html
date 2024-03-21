@@ -4,45 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What's Your Camp Half-Blood Cabin?</title>
-    <link rel="shortcut icon" type="image/png" href="images/pegasus.png">
+    <link rel="shortcut icon" type="image/png" href="images/pegasus.webp">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <main>
-        <!-- <div class="left_side"> -->
-            <button class="olympians" id="ares" onclick="">
-                <img src="images/ares_cabin.png" alt="ares cabin" width="200" height="130">
-            </button>
-            <button class="olympians" id="apollo" >
-                <img src="images/apollo_cabin.png" alt="apollo cabin" width="200" height="130">
-            </button>
-        <!-- </div> -->
-        <!-- <div class="top_left"> -->
-            <button class="olympians" id="poseidon">
-                <img src="images/poseidon_cabin.png" alt="poseidon cabin" width="200" height="120">
-            </button>
-            <button class="olympians" id="zeus">
-                <img src="images/zeus_cabin.png" alt="zeus cabin" width="200" height="120">
-            </button>
-        <!-- </div> -->
-        <!-- <div class="top_right"> -->
-            <button class="olympians" id="hera">
-                <img src="images/hera_cabin.png" alt="hera cabin" width="200" height="120">
-            </button>
-            <button class="olympians" id="demeter">
-                <img src="images/demeter_cabin.png" alt="demeter cabin" width="200" height="150">
-            </button>
+        <!-- audio elements -->
+        <audio id src="sounds/zeus.mp3"></audio>
+
+        <button class="olympians" id="poseidon">
+            <img src="images/poseidon_cabin.webp" alt="poseidon cabin" width="200" height="120">
+        </button>
+        <button class="olympians" id="zeus">
+            <img src="images/zeus_cabin.webp" alt="zeus cabin" width="200" height="120">
+        </button>
+
+        <div class="olympians" id="message">
+            <h1>Cabins at <br>Camp Half-Blood</h1>
+            <div class="calendar">
+                <input class="calendar" type="date" id="birthday">
+                <button id="calculate">Let's Go</button>
+            </div>
+        </div>
+
+        <button class="olympians" id="hera">
+            <img src="images/hera_cabin.webp" alt="hera cabin" width="200" height="120">
+        </button>
+        <button class="olympians" id="demeter">
+            <img src="images/demeter_cabin.webp" alt="demeter cabin" width="200" height="150">
+        </button>
+
+        <button class="olympians" id="ares" onclick="">
+            <img src="images/ares_cabin.webp" alt="ares cabin" width="200" height="130">
+        </button>
+        <button class="olympians" id="apollo" >
+            <img src="images/apollo_cabin.webp" alt="apollo cabin" width="200" height="130">
+        </button>
+    
+        <div class="zodiac-container" id="result"> </div>
+
+        <button class="olympians" id="athena">
+            <img src="images/athena_cabin.webp" alt="athena cabin" width="200" height="130">
+        </button>
+        <button class="olympians" id="artemis">
+            <img src="images/artemis_cabin.webp" alt="artemis cabin" width="200" height="130">
+        </button> 
+            
         <!-- </div> -->
         <!-- <div class="right_side"> -->
-            <button class="olympians" id="athena">
-                <img src="images/athena_cabin.png" alt="athena cabin" width="200" height="130">
-            </button>
-            <button class="olympians" id="artemis">
-                <img src="images/artemis_cabin.png" alt="artemis cabin" width="200" height="130">
-            </button> 
+            
         <!-- </div> -->
         <button id="help">
-            <img src="images/help_icon.png" alt="help icon" width="50" height="50">
+            <img src="images/help_icon.webp" alt="help icon" width="50" height="50">
         </button>
             <!--<div id="help-section">
                 <h3>Hello, Demigod.</h3>
@@ -50,34 +63,25 @@
                 <p>Enter Your Birthday</p> 
             </div>
         -->
-        <div class="message">
-            <h1>Cabins at <br>Camp Half-Blood</h1>
-            <div class="calendar">
-                <input class="calendar" type="date" id="birthday">
-                <button id="calculate">Let's Go</button>
-            </div>
-        </div>
-    
-        <div class="zodiac-container" 
-        id="result">
 
-        </div>
+    
+
 
         <!-- <div class="bottom_row"> -->
             <button class="olympians" id="hephaestus">
-                <img src="images/hephaestus_cabin.png" alt="hephaestus cabin" width="200" height="130">
+                <img src="images/hephaestus_cabin.webp" alt="hephaestus cabin" width="200" height="130">
             </button>
             <button class="olympians" id="aphrodite">
-                <img src="images/aphrodite_cabin.png" alt="aphrodite cabin" width="200" height="130">
+                <img src="images/aphrodite_cabin.webp" alt="aphrodite cabin" width="200" height="130">
             </button>
             <button class="olympians" id="hestia">
-                <img src="images/hestia_hearth.png" alt="hestia's hearth" width="200" height="200">
+                <img src="images/hestia_hearth.webp" alt="hestia's hearth" width="200" height="200">
             </button> 
             <button class="olympians" id="hermes">
-                <img src="images/hermes_cabin.png" alt="hermes cabin" width="200" height="150">
+                <img src="images/hermes_cabin.webp" alt="hermes cabin" width="200" height="150">
             </button>
             <button class="olympians" id="dionysus">
-                <img src="images/dionysus_cabin.png" alt="dionysus cabin" width="200" height="130">
+                <img src="images/dionysus_cabin.webp" alt="dionysus cabin" width="200" height="130">
             </button> 
         <!-- </div> -->
     </main>
