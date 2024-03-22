@@ -138,6 +138,8 @@ function calendarOlympianInfo(olympian) {
 
 
 
+
+
 function displayOlympianInfo(olympian) {
     const godInfo = olympianInfo[olympian];
     const audio = new Audio();
@@ -155,6 +157,8 @@ function displayOlympianInfo(olympian) {
             ${godInfo.description}\n
             ${godInfo.campers || 'Empty cabin!'}\n
             ${godInfo.images || 'No campers yet!'}
+            ${godInfo.images.length > 0 ? '' : 'No images available!'}
+
         `;
         
         if (godInfo.images && godInfo.images.length > 0) {
