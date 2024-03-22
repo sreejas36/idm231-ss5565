@@ -54,7 +54,7 @@ main {
 #hera{ grid-area: d; }
 #demeter{ grid-area: e; }
 #ares{ grid-area: f; }
-/* #result{ grid-area: g; } */
+#result{ grid-area: g; }
 #athena{ grid-area: h; }
 #apollo{ grid-area: i; }
 #artemis{ grid-area: j; }
@@ -168,11 +168,7 @@ main {
     width: 600px;
     background-color: blanchedalmond;
     border-radius: 30px;
-    position: fixed;
     margin: auto;
-    right: auto;
-    top: auto;
-    left: auto;
 }
 #help {
     position: fixed;
@@ -191,4 +187,9 @@ main {
     align-items: center;
     text-size-adjust: 20;
     padding: 10px;
+    position: absolute;
+    right: 20%;
+    top: 20%;
+    left: 20%;
+    bottom: 20%;
 }

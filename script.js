@@ -16,7 +16,7 @@ const olympianInfo = {
     poseidon: {
         name: 'Poseidon',
         sign: 'Pisces',
-        description:'God of the ea',
+        description:'God of the Sea',
         campers:'Percy Jackson',
     },
     demeter: {
@@ -74,7 +74,7 @@ const olympianInfo = {
     },
 };
 
-// const godInfo = olympianInfo.[hermes];
+const godInfo = olympianInfo.hermes;
 console.log()
 
 function calculateOlympian() {
@@ -94,7 +94,7 @@ function calculateOlympian() {
 function calendarOlympianInfo(olympian) {
     console.log("Received god:", olympian);
     // Display the information for the selected Greek god
-    godInfo = olympianInfo;
+    // godInfo = olympianInfo;
     console.log("God info:", godInfo);
     // console.log("God name:", godInfo);
     document.getElementById("result").innerText = `
@@ -175,7 +175,23 @@ function getOlympian (month, day) {
     }
 }
 
+// play that sound!!
+function playSound(olympian) {
+    const audioElement = document.getElementById(`${zodiacSign.toLowerCase()}-audio`);
+    if (audioElement) {
+        audioElement.play();
+    }
+}
 
+// function to stop the audio element
+function stopSound() {
+    const audioElements = document.querySelectorAll('audio');
+    audioElements.forEach(audioElement => {
+        audioElement.pause();
+        // reset the audio to the verrrry beginning
+        audioElement.currentTime = 0; 
+    });
+}
 
 // event listeners to see if someone clicks a cabin and call respective info
 document.getElementById("zeus").addEventListener("click", () => displayOlympianInfo('zeus'));
