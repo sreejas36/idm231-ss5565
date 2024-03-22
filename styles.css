@@ -34,11 +34,9 @@ body {
 main {
     margin: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr 1fr 1fr; /* 5 columns */
-    grid-auto-rows: 150px; /* Height of each row */
-    gap: 5px; /* Gap between grid items */
-    /* grid-template-rows: repeat(4); */
-    /* grid-template-columns: repeat(5); */
+    grid-template-columns: 1fr 1fr 2fr 1fr 1fr; 
+    grid-auto-rows: 150px; 
+    gap: 5px; 
     grid-template-areas: 
         "a b c d e"
         "f - - - h"
@@ -92,12 +90,9 @@ main {
 
 
 .cabins {
-    display: g;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    grid-template-rows: repeat(3,1fr);
-    grid-template-columns: 4, 1fr;
 }
 
 .top_left{
@@ -105,9 +100,6 @@ main {
     flex: 1;
     align-items: center;
     justify-content: center;
-    /* position: fixed; */
-    /* left: 50px; */
-    /* top: 70px; */
     
 }
 
@@ -156,7 +148,6 @@ main {
     justify-content: center;
     /* position: fixed; */
     /* bottom: 50px; */
-    justify-items: auto;
 }
 
 #result{
@@ -179,17 +170,37 @@ main {
 }
 #help-section {
     font-family: var(--metamorphous);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
 }
 
 .zodiac-container{
     font-family: var(--metamorphous);
     text-align: center;
     align-items: center;
-    text-size-adjust: 20;
     padding: 10px;
     position: absolute;
     right: 20%;
     top: 20%;
     left: 20%;
     bottom: 20%;
+}
+
+.button{
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 30px;
+    background-color: #FE5E02;
+    font-family: var(--montserrat);
+    background-color: #FE5E02;
+    width: fit-content;
+    align-self: auto;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
