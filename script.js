@@ -5,7 +5,8 @@ const olympianInfo = {
         sign: 'Taurus',
         description: 'King of the Gods',
         campers:['Jason Grace', 'Thalia Grace'],
-        images: ['images/jason.webp', 'images/thalia.webp']
+        // sound: 'sounds/zeus.mp3',
+        // images: ['images/jason.webp', 'images/thalia.webp']
     },
     hera: {
         name: 'Hera',
@@ -72,6 +73,8 @@ const olympianInfo = {
         description: 'God of Wine',
     },
 };
+
+// const godInfo = olympianInfo.[hermes];
 console.log()
 
 function calculateOlympian() {
@@ -81,27 +84,67 @@ function calculateOlympian() {
         const month = birthdate.getMonth() + 1;
         const day = birthdate.getDate();
         const olympian = getOlympian(month, day);
-        displayOlympianInfo(olympian);
+        calendarOlympianInfo(olympian);
     } else {
         document.getElementById("result").innerHTML = "Please put in your birthday!";
     }
 }
 
-function displayOlympianInfo(god) {
-        console.log("Received god:", god);
+
+function calendarOlympianInfo(olympian) {
+    console.log("Received god:", olympian);
+    // Display the information for the selected Greek god
+    godInfo = olympianInfo;
+    console.log("God info:", godInfo);
+    // console.log("God name:", godInfo);
+    document.getElementById("result").innerText = `
+        ${godInfo.name}\n
+        ${godInfo.sign}\n
+        ${godInfo.description}\n
+        ${godInfo.campers || 'Empty cabin!'}\n
+        ${godInfo.images || 'No campers yet!'}
+    `;
+    // \n is equivalent to a break tag
+}
+
+function displayOlympianInfo(olympian) {
+        console.log("Received god:", olympian);
         // Display the information for the selected Greek god
-        const godInfo = olympianInfo[god];
+        const godInfo = olympianInfo[olympian];
         console.log("God info:", godInfo);
-        console.log("God name:", godInfo.name);
+        // console.log("God name:", godInfo);
         document.getElementById("result").innerText = `
             ${godInfo.name}\n
             ${godInfo.sign}\n
             ${godInfo.description}\n
-            ${godInfo.campers || 'None'}\n
-            ${godInfo.images || 'None'}
+            ${godInfo.campers || 'Empty cabin!'}\n
+            ${godInfo.images || 'No campers yet!'}
         `;
         // \n is equivalent to a break tag
 }
+
+// function displayOlympianInfo(god) {
+//     console.log("Received god:", god);
+//     const godInfo = olympianInfo[god];
+//     console.log("God info:", godInfo);
+//     const resultContainer = document.getElementById("result");
+//     resultContainer.innerHTML = `
+//         <h2>${godInfo.name}</h2>
+//         <strong>${godInfo.sign}</strong> \n
+//         <strong>${godInfo.description}</strong> \n
+//         <p><strong>Campers:</strong> ${godInfo.campers ? godInfo.campers.join(', ') : 'None'}</p> \n
+//         <h3>Images:</h3>
+//         <div id="image-container">
+//             ${godInfo.images.map(imageUrl => `<img src="${imageUrl}" alt="${godInfo.name}" width="50">`).join('')}
+//         </div>
+//         <h3>Audio:</h3>
+//         <audio controls>
+//             <source src="${godInfo.audio}" type="audio/mpeg">
+//             Your browser does not support the audio element.
+//         </audio>
+//     `;
+// }
+
 
 //function to find olympian
 function getOlympian (month, day) {
