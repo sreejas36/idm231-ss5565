@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's Your Camp Half-Blood Cabin?</title>
+    <link rel="shortcut icon" type="image/png" href="images/pegasus.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <!-- audio elements -->
+            <audio idsrc="sounds/zeus.mp3"></audio>
+
+        <!-- <div class="top_left"> -->
+            <button class="olympians" id="poseidon">
+                <img src="images/poseidon_cabin.webp" alt="poseidon cabin" width="200" height="120">
+            </button>
+            <button class="olympians" id="zeus">
+                <img src="images/zeus_cabin.webp" alt="zeus cabin" width="200" height="120">
+            </button>
+        <!-- </div> -->
+        <!-- <div class="left_side"> -->
+        <button class="olympians" id="ares" onclick="">
+            <img src="images/ares_cabin.webp" alt="ares cabin" width="200" height="130">
+        </button>
+        <button class="olympians" id="apollo" >
+            <img src="images/apollo_cabin.webp" alt="apollo cabin" width="200" height="130">
+        </button>
+    <!-- </div> -->
+        <!-- <div class="top_right"> -->
+            <button class="olympians" id="hera">
+                <img src="images/hera_cabin.webp" alt="hera cabin" width="200" height="120">
+            </button>
+            <button class="olympians" id="demeter">
+                <img src="images/demeter_cabin.webp" alt="demeter cabin" width="200" height="150">
+            </button>
+        <!-- </div> -->
+        <!-- <div class="right_side"> -->
+            <button class="olympians" id="athena">
+                <img src="images/athena_cabin.webp" alt="athena cabin" width="200" height="130">
+            </button>
+            <button class="olympians" id="artemis">
+                <img src="images/artemis_cabin.webp" alt="artemis cabin" width="200" height="130">
+            </button> 
+        <!-- </div> -->
+        <button id="help">
+            <img src="images/help_icon.webp" alt="help icon" width="50" height="50">
+        </button>
+            <!--<div id="help-section">
+                <h3>Hello, Demigod.</h3>
+                <h4>Want to figure out your godly parent?</h4>
+                <p>Enter Your Birthday</p> 
+            </div>
+        -->
+        <div class="message">
+            <h1>Cabins at <br>Camp Half-Blood</h1>
+            <div class="calendar">
+                <input class="calendar" type="date" id="birthday">
+                <button id="calculate">Let's Go</button>
+            </div>
+        </div>
+    
+        <div class="zodiac-container" 
+        id="result">
+
+        </div>
+
+        <!-- <div class="bottom_row"> -->
+            <button class="olympians" id="hephaestus">
+                <img src="images/hephaestus_cabin.webp" alt="hephaestus cabin" width="200" height="130">
+            </button>
+            <button class="olympians" id="aphrodite">
+                <img src="images/aphrodite_cabin.webp" alt="aphrodite cabin" width="200" height="130">
+            </button>
+            <button class="olympians" id="hestia">
+                <img src="images/hestia_hearth.webp" alt="hestia's hearth" width="200" height="200">
+            </button> 
+            <button class="olympians" id="hermes">
+                <img src="images/hermes_cabin.webp" alt="hermes cabin" width="200" height="150">
+            </button>
+            <button class="olympians" id="dionysus">
+                <img src="images/dionysus_cabin.webp" alt="dionysus cabin" width="200" height="130">
+            </button> 
+        <!-- </div> -->
+    </main>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+//const godInfo = olympianInfo.zeus;
+//const audio = new Audio('sounds/zeus.mp3');
+// Display the information for the selected Greek god
+// godInfo = olympianInfo;
+// console.log("God name:", godInfo);
+// audio = godInfo[olympian.sound];
+audio.play();
+// console.log("God name:", godInfo);
+
+
+/////////////////////////////////////////////////////////////////////////////
+
+
+const olympianInfo = {
+    zeus: {
+        name: 'Zeus',
+        sign: 'Taurus',
+        description: 'King of the Gods',
+        campers:['Jason Grace', 'Thalia Grace'],
+        sound: 'sounds/zeus.mp3',
+        images: ['images/jason.webp', 'images/thalia.webp']
+    },
+    hera: {
+        name: 'Hera',
+        sign: 'Capricorn',
+        description:'Queen of the Gods',
+        sound: 'sounds/hera.mp3',
+        images: [],
+    },
+    poseidon: {
+        name: 'Poseidon',
+        sign: 'Pisces',
+        description:'God of the Sea',
+        campers:['Percy Jackson', 'Tyson'],
+        sound: 'sounds/poseidon.mp3',
+        images: ['images/percy.webp', 'images/tyson.webp']
+    },
+    demeter: {
+        name: 'Demeter',
+        sign: 'Virgo',
+        description:'Goddess of the Harvest',
+        campers:'Meg McCaffrey',
+        sound: 'sounds/demeter.mp3',
+        images: 'images/meg.webp',
+    },
+    ares: {
+        name: 'Ares',
+        sign: 'Aries',
+        description: 'God of War',
+        campers: 'Clarisse LaRue, Frank Zhang',
+        sound: 'sounds/ares.mp3',
+        images: ['images/clarisse.webp', 'images/frank.webp']
+    },
+    athena: {
+        name: 'Athena',
+        sign: 'Aquarius',
+        description: 'Goddess of Wisdom',
+        campers: 'Annabeth Chase',
+        sound: 'sounds/athena.mp3',
+        images: 'images/annabeth.webp',
+    },
+    apollo: {
+        name: 'Apollo',
+        sign: 'Leo',
+        description: 'God of the Sun',
+        campers: 'Will Solace, Kayla Knowles, Austin Lake',
+        sound: 'sounds/apollo.mp3',
+        images: ['images/will.webp', 'images/kayla.webp', 'images/austin.webp']
+    },
+    artemis:{
+        name: 'Artemis',
+        sign: 'Cancer',
+        description: 'Goddess of the Moon',
+        campers: 'Thalia Grace',
+        sound: 'sounds/artemis.mp3',
+        images: 'images/thalia.webp',
+    },
+    hephaestus: {
+        name: 'Hephaestus',
+        sign: 'Scorpio',
+        description: 'God of Craftsmen and Fire',
+        campers: 'Leo Valdez, Charles Beckendorf,',
+        sound: 'sounds/hephaestus.mp3',
+        images: ['images/leo.webp', 'images/charles.webp', 'images/harley.webp']
+    },
+    aphrodite: {
+        name: 'Aphrodite',
+        sign: 'Libra',
+        description: 'Goddess of Love',
+        campers: 'Piper McLean, Silena Beauregard',
+        sound: 'sounds/aphrodite.mp3',
+        images: ['images/piper.webp', 'images/silena.webp']
+    },
+    hermes: {
+        name: 'Hermes',
+        sign: 'Gemini',
+        description: 'God of Travel',
+        campers: 'Luke Castellan, Travis and Connor Stoll',
+        sound: 'sounds/hermes.mp3',
+        images: ['images/luke.webp', 'images/travis_and_connor.webp']
+    },
+    dionysus: {
+        name: 'Dionysus',
+        sign: 'Sagittarius',
+        description: 'God of Wine',
+        sound: 'sounds/dionysus.mp3',
+        images: []
+    },
+};
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\// play that sound!!
+function playSound(olympian) {
+    const audioElement = document.getElementById(`${zodiacSign.toLowerCase()}-audio`);
+    if (audioElement) {
+        audioElement.play();
+    }
+}
+
+// function to stop the audio element
+function stopSound() {
+    const audioElements = document.querySelectorAll('audio');
+    audioElements.forEach(audioElement => {
+        audioElement.pause();
+        // reset the audio to the verrrry beginning
+        audioElement.currentTime = 0; 
+    });
+}
+
+
+
+
+
+
+function displayOlympianInfo(god) {
+    console.log("Received god:", god);
+    const godInfo = olympianInfo[god];
+    console.log("God info:", godInfo);
+    const resultContainer = document.getElementById("result");
+    resultContainer.innerHTML = `
+        <h2>${godInfo.name}</h2>
+        <strong>${godInfo.sign}</strong> \n
+        <strong>${godInfo.description}</strong> \n
+        <p><strong>Campers:</strong> ${godInfo.campers ? godInfo.campers.join(', ') : 'None'}</p> \n
+        <h3>Images:</h3>
+        <div id="image-container">
+            ${godInfo.images.map(imageUrl => `<img src="${imageUrl}" alt="${godInfo.name}" width="50">`).join('')}
+        </div>
+        <h3>Audio:</h3>
+        <audio controls>
+            <source src="${godInfo.audio}" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    `;
+}
+
+
+function play(god) {
+    var audio = new Audio('zeus.mp3');
+    audio.play();
+}
+
+// // Create a div element to hold the text and images
+// const godInfoContainer = document.createElement("div");
+
+// // Append the text and image elements to the container
+// godInfoContainer.innerHTML = `
+//     <p>${godInfo.name}</p>
+//     <p>${godInfo.sign}</p>
+//     <p>${godInfo.description}</p>
+//     <p>Campers: ${godInfo.campers || 'None'}</p>
+// `;
+
+
+
+imageElements.forEach(imageElement => {
+    godInfoContainer.appendChild(imageElement);
+});
+
+// Append the container to the resultElement
+resultElement.innerHTML = '';
+resultElement.appendChild(godInfoContainer);
+
+const resultElement = document.getElementById("result");
+// Create an image element for each image in the godInfo
+const imageElements = godInfo.images.map(image => {
+    const imgElement = document.createElement("godinfo.images");
+    imgElement.src = image;
+    imgElement.alt = godInfo.name;
+    return imgElement;
+});
+<div id="image-container">
+${godInfo.images.map(imageUrl => `<img src="${imageUrl}" alt="${godInfo.name}" width="50">`).join('')}
+</div>
+
+
+// Create an image element for each image in the godInfo
+const imageElements = godInfo.images.map(image => {
+    const imgElement = document.createElement("img");
+    imgElement.src = image;
+    imgElement.alt = godInfo.name;
+    return imgElement;
+});
+
+// Create a div element to hold the text and images
+const godInfoContainer = document.createElement("div");
+
+// Append the text and image elements to the container
+godInfoContainer.innerHTML = `
+    <p>${godInfo.name}</p>
+    <p>${godInfo.sign}</p>
+    <p>${godInfo.description}</p>
+    <p>Campers: ${godInfo.campers || 'None'}</p>
+`;
+
+imageElements.forEach(imageElement => {
+    godInfoContainer.appendChild(imageElement);
+});
+
+// Append the container to the resultElement
+resultElement.innerHTML = '';
+resultElement.appendChild(godInfoContainer);
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percy Jackson Characters</title>
+</head>
+<body>
+    <h1>What's Your Camp Halfblood Cabin?</h1>
+        <ol>
+            <li>
+                <h2>Zeus</h2>
+
+            </li>
+            <p></p>
+            <p>The King of the Gods, Zeus is the Lord of the Sky!</p>
+            <li>
+                <h2>Hera</h2>
+            </li>
+            <li>
+                <h2>Poseidon</h2>
+            </li>
+            <li>
+                <h2>Demeter</h2>
+            </li>
+            <li>Ares</li>
+            <p>Aries</p>
+            <li>Athena</li>
+            <p>Capricorn or Gemini</p>
+            <li>Apollo</li>
+            <p>Leo</p>
+            <li>Artemis</li>
+            <p>Sagittarius</p>
+            <p>Artemis is the Goddess of the Hunt and an eternal maiden. She doesn't have any children, so her cabin often remains empty. However, when the Hunters of Artemis come to Camp, that's where they reside!</p>
+            <p>Sagittarius is depicted as "The Archer" in the stars. Sagittarians are explorers, and often do not like to be tied down to just one thing. They're always on the move, and have the desire to help the people they meet.</p>
+            <p>As Artemis is 
+                you are a match made in the stars!</p>
+            <li>Hephaestus</li>
+            <p>Scorpio</p>
+            like
+            <li>Aphrodite</li>
+            <p>Pisces</p>
+            <p>The Goddess of Love, often refered to as the 1st Olympian, is the </p>
+            <li>Hermes</li>
+            <li>Dionysus</li>
+
+
+
+
+            <li>Hades</li>
+            <p></p>
+            <li>Hestia</li>
+        </ol>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <ol>
+            <li>Percy Jackson</li>
+            <li>Annabeth Chase</li>
+            <li>Jason Grace</li>
+            <li>Piper McLean</li>
+            <li>Leo Valdez</li>
+            <li>Hazel Levesque</li>
+            <li>Frank Zhang</li>
+            <li>Grover Underwood</li>
+            <li>Reyna Avila Ramírez-Arellano</li>
+            <li>Nico Diangelo</li>
+            <li>Thalia Grace</li>
+            <li>Rachel Elizabeth Dare</li>
+        </ol>
+
+
+
+</body>
+</html>

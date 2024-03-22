@@ -1,81 +1,99 @@
 const olympianInfo = {
-    
     zeus: {
         name: 'Zeus',
         sign: 'Taurus',
         description: 'King of the Gods',
         campers:['Jason Grace', 'Thalia Grace'],
-        // sound: 'sounds/zeus.mp3',
-        // images: ['images/jason.webp', 'images/thalia.webp']
+        sound: 'sounds/zeus.mp3',
+        images: ['images/jason.webp', 'images/thalia.webp']
     },
     hera: {
         name: 'Hera',
         sign: 'Capricorn',
         description:'Queen of the Gods',
+        sound: 'sounds/hera.mp3',
+        images: [],
     },
     poseidon: {
         name: 'Poseidon',
         sign: 'Pisces',
         description:'God of the Sea',
-        campers:'Percy Jackson',
+        campers:['Percy Jackson', 'Tyson'],
+        sound: 'sounds/poseidon.mp3',
+        images: ['images/percy.webp', 'images/tyson.webp']
     },
     demeter: {
         name: 'Demeter',
         sign: 'Virgo',
         description:'Goddess of the Harvest',
         campers:'Meg McCaffrey',
+        sound: 'sounds/demeter.mp3',
+        images: 'images/meg.webp',
     },
     ares: {
         name: 'Ares',
         sign: 'Aries',
         description: 'God of War',
         campers: 'Clarisse LaRue, Frank Zhang',
+        sound: 'sounds/ares.mp3',
+        images: ['images/clarisse.webp', 'images/frank.webp']
     },
     athena: {
         name: 'Athena',
         sign: 'Aquarius',
         description: 'Goddess of Wisdom',
         campers: 'Annabeth Chase',
+        sound: 'sounds/athena.mp3',
+        images: 'images/annabeth.webp',
     },
     apollo: {
         name: 'Apollo',
         sign: 'Leo',
         description: 'God of the Sun',
         campers: 'Will Solace, Kayla Knowles, Austin Lake',
+        sound: 'sounds/apollo.mp3',
+        images: ['images/will.webp', 'images/kayla.webp', 'images/austin.webp']
     },
     artemis:{
         name: 'Artemis',
         sign: 'Cancer',
         description: 'Goddess of the Moon',
         campers: 'Thalia Grace',
+        sound: 'sounds/artemis.mp3',
+        images: 'images/thalia.webp',
     },
     hephaestus: {
         name: 'Hephaestus',
         sign: 'Scorpio',
         description: 'God of Craftsmen and Fire',
         campers: 'Leo Valdez, Charles Beckendorf,',
+        sound: 'sounds/hephaestus.mp3',
+        images: ['images/leo.webp', 'images/charles.webp', 'images/harley.webp']
     },
     aphrodite: {
         name: 'Aphrodite',
         sign: 'Libra',
         description: 'Goddess of Love',
         campers: 'Piper McLean, Silena Beauregard',
+        sound: 'sounds/aphrodite.mp3',
+        images: ['images/piper.webp', 'images/silena.webp']
     },
     hermes: {
         name: 'Hermes',
         sign: 'Gemini',
         description: 'God of Travel',
         campers: 'Luke Castellan, Travis and Connor Stoll',
+        sound: 'sounds/hermes.mp3',
+        images: ['images/luke.webp', 'images/travis_and_connor.webp']
     },
     dionysus: {
         name: 'Dionysus',
         sign: 'Sagittarius',
         description: 'God of Wine',
+        sound: 'sounds/dionysus.mp3',
+        images: []
     },
 };
-
-const godInfo = olympianInfo.hermes;
-console.log()
 
 function calculateOlympian() {
     let selectedDate = document.getElementById("birthday").value;
@@ -90,29 +108,47 @@ function calculateOlympian() {
     }
 }
 
-
 function calendarOlympianInfo(olympian) {
+    const demigodInfo = olympianInfo.olympian;      //demigod remains undefined OR no values stored
     console.log("Received god:", olympian);
-    // Display the information for the selected Greek god
-    // godInfo = olympianInfo;
-    console.log("God info:", godInfo);
-    // console.log("God name:", godInfo);
+    console.log("God info:", demigodInfo);
+    const dgaudio = new Audio();
+    dgaudio.src = olympian.sound; // Set the audio source
+    dgaudio.play();
     document.getElementById("result").innerText = `
-        ${godInfo.name}\n
-        ${godInfo.sign}\n
-        ${godInfo.description}\n
-        ${godInfo.campers || 'Empty cabin!'}\n
-        ${godInfo.images || 'No campers yet!'}
+        ${olympian.name}\n
+        ${demigodInfo.sign}\n
+        ${demigodInfo.description}\n
+        ${demigodInfo.campers || 'Empty cabin!'}\n
+        ${demigodInfo.images || 'No campers yet!'}
     `;
-    // \n is equivalent to a break tag
+// }
+// //<div id="imageContainer"></div>
+//   // Function to display images
+
+//     function displayImages() {
+//         const container = document.getElementById("imageContainer");
+//         imagePaths.forEach(path => {
+//             const img = document.createElement("img");
+//             img.src = path;
+//             img.alt = "Image";
+//             container.appendChild(img);
+    // });
 }
 
+
+
 function displayOlympianInfo(olympian) {
+    const godInfo = olympianInfo[olympian];
+    const audio = new Audio();
+    const container = document.getElementById("imageContainer");
+ 
+    audio.src = godInfo.sound; // Set the audio source
+    audio.play(); // Play the audio
+   // images.src = godInfo.images;
         console.log("Received god:", olympian);
         // Display the information for the selected Greek god
-        const godInfo = olympianInfo[olympian];
         console.log("God info:", godInfo);
-        // console.log("God name:", godInfo);
         document.getElementById("result").innerText = `
             ${godInfo.name}\n
             ${godInfo.sign}\n
@@ -120,30 +156,24 @@ function displayOlympianInfo(olympian) {
             ${godInfo.campers || 'Empty cabin!'}\n
             ${godInfo.images || 'No campers yet!'}
         `;
-        // \n is equivalent to a break tag
+        
+        if (godInfo.images && godInfo.images.length > 0) {
+            godInfo.images.forEach(imageSrc => {
+                const img = document.createElement("img");
+                img.src = imageSrc;
+                container.appendChild(img); });
+            }
+        // const imagePaths = godInfo.images;
+        // function displayImages() {
+        //     const container = document.getElementById("imageContainer");
+        //         imagePaths.forEach(path => {
+        //         const img = document.createElement("img");
+        //         img.src = path;
+        //         img.alt = "Image"
+        //         container.appendChild(img);
+            // });
 }
 
-// function displayOlympianInfo(god) {
-//     console.log("Received god:", god);
-//     const godInfo = olympianInfo[god];
-//     console.log("God info:", godInfo);
-//     const resultContainer = document.getElementById("result");
-//     resultContainer.innerHTML = `
-//         <h2>${godInfo.name}</h2>
-//         <strong>${godInfo.sign}</strong> \n
-//         <strong>${godInfo.description}</strong> \n
-//         <p><strong>Campers:</strong> ${godInfo.campers ? godInfo.campers.join(', ') : 'None'}</p> \n
-//         <h3>Images:</h3>
-//         <div id="image-container">
-//             ${godInfo.images.map(imageUrl => `<img src="${imageUrl}" alt="${godInfo.name}" width="50">`).join('')}
-//         </div>
-//         <h3>Audio:</h3>
-//         <audio controls>
-//             <source src="${godInfo.audio}" type="audio/mpeg">
-//             Your browser does not support the audio element.
-//         </audio>
-//     `;
-// }
 
 
 //function to find olympian
@@ -173,24 +203,6 @@ function getOlympian (month, day) {
     } else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
         return 'Athena'
     }
-}
-
-// play that sound!!
-function playSound(olympian) {
-    const audioElement = document.getElementById(`${zodiacSign.toLowerCase()}-audio`);
-    if (audioElement) {
-        audioElement.play();
-    }
-}
-
-// function to stop the audio element
-function stopSound() {
-    const audioElements = document.querySelectorAll('audio');
-    audioElements.forEach(audioElement => {
-        audioElement.pause();
-        // reset the audio to the verrrry beginning
-        audioElement.currentTime = 0; 
-    });
 }
 
 // event listeners to see if someone clicks a cabin and call respective info
