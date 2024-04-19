@@ -5,7 +5,7 @@ const olympianInfo = {
         description: 'King of the Gods',
         campers:['Jason Grace', 'Thalia Grace'],
         sound: 'sounds/zeus.mp3',
-        images: ['images/jason.webp', 'images/thalia.webp']
+        images: <img src='images/jason.webp' src='images/thalia.webp' alt=""/> ['images/jason.webp', 'images/thalia.webp']
     },
     hera: {
         name: 'Hera',
